@@ -1,0 +1,255 @@
+/* Mobile First Responsive Design */
+
+/* Tablets and below (768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: var(--spacing-md);
+    }
+
+    .hero {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .hero-title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .hero-description {
+        font-size: var(--font-size-base);
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .assessment-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .section-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .section-tab {
+        flex-shrink: 0;
+    }
+
+    .question-container {
+        padding: var(--spacing-lg);
+    }
+
+    .question-text {
+        font-size: var(--font-size-xl);
+    }
+
+    .likert-options {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .likert-label {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: var(--spacing-md);
+    }
+
+    .likert-number {
+        width: 36px;
+        height: 36px;
+        font-size: var(--font-size-lg);
+    }
+
+    .assessment-actions {
+        flex-direction: column;
+    }
+
+    .assessment-actions .btn {
+        width: 100%;
+    }
+
+    .results-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .results-header h1 {
+        font-size: var(--font-size-2xl);
+    }
+
+    .results-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .results-actions .btn {
+        width: 100%;
+    }
+
+    .chart-wrapper {
+        height: 300px;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .score-value {
+        font-size: var(--font-size-4xl);
+    }
+
+    .benchmark-comparison {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .benchmark-bar {
+        width: 100%;
+    }
+
+    .benchmark-value {
+        text-align: left;
+    }
+}
+
+/* Small mobile (480px) */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .hero-badge {
+        font-size: var(--font-size-xs);
+        padding: var(--spacing-xs) var(--spacing-md);
+    }
+
+    .question-text {
+        font-size: var(--font-size-lg);
+    }
+
+    .feature-card {
+        padding: var(--spacing-lg);
+    }
+
+    .feature-icon {
+        font-size: 36px;
+    }
+
+    .btn-large {
+        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: var(--font-size-base);
+    }
+
+    .score-value {
+        font-size: var(--font-size-3xl);
+    }
+
+    .chart-wrapper {
+        height: 250px;
+    }
+}
+
+/* Large screens (1200px+) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .likert-options {
+        gap: var(--spacing-lg);
+    }
+
+    .chart-wrapper {
+        height: 500px;
+    }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .chart-wrapper {
+        height: 300px;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+    }
+
+    .page {
+        display: block !important;
+        page-break-after: always;
+    }
+
+    .btn,
+    .btn-back,
+    .hero-actions,
+    .results-actions,
+    .assessment-actions {
+        display: none !important;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .card,
+    .score-card,
+    .chart-container {
+        box-shadow: none;
+        border: 1px solid #e5e7eb;
+        page-break-inside: avoid;
+    }
+
+    .chart-wrapper {
+        height: 400px;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .btn-primary {
+        border: 2px solid currentColor;
+    }
+
+    .likert-option input[type="radio"]:checked+.likert-label {
+        border: 3px solid var(--primary-color);
+    }
+}
